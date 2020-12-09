@@ -25,7 +25,7 @@ SECRET_KEY = '21F23Ff976995C3F943661684Ac7B42687834C4C47Abe43A'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['brahimtest.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['dj-job-boards.herokuapp.com','127.0.0.1']
 
 
 # Application definition
