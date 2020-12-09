@@ -142,3 +142,4 @@ CKEDITOR_CONFIGS = {
         'width': 610,
     },
 }
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
