@@ -5,6 +5,8 @@ from django.core.paginator import Paginator
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .filters import PostFilter
+from django.contrib import messages
+
 # Create your views here.
 def all_post(request):
     all_post= Post.objects.all()
@@ -38,6 +40,7 @@ def add_job(request):
             myform=form.save()
             myform.owner=request.user
             myform.save()
+            messages.success(request, 'Profile details updated.')
             return redirect(reverse('all_post'))
     else:
         form=PostForm()
