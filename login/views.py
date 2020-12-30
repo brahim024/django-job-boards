@@ -3,6 +3,7 @@ from .forms import SignupForm, UserForm , ProfileForm
 from django.contrib.auth import authenticate
 from .models import Profile
 from django.urls import reverse
+from django.contrib import messages
 # Create your views here.
 # if name==:
 def signup(request):
@@ -32,6 +33,7 @@ def profile_edit(request):
             myprofile = profileform.save(commit=False)
             myprofile.user = request.user
             myprofile.save()
+            messages.success(request, 'Profile details updated.')
             return redirect(reverse('accounts:profile'))
 
     else :

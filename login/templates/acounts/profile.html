@@ -15,7 +15,13 @@
         </div>
     </div>
     <!--/ bradcam_area  -->
-
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h2{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
+    {% endfor %}
+</ul>
+{% endif %}
     <div class="job_details_area">
         <div class="container">
             <div class="row">

@@ -32,16 +32,16 @@ def post(request, slug):
         form=ApplyForm()
     context = {'job':post,'form':form}
     return render(request,'job_details.html',context)
+
 @login_required
 def add_job(request):
     if request.method=='POST':
         form=PostForm(request.POST , request.FILES)
         if form.is_valid():
-            myform=form.save()
-            myform.owner=request.user
+            myform=form.save(commit=False)
+            myform.user=request.user
             myform.save()
-            messages.success(request, 'Profile details updated.')
-            return redirect(reverse('all_post'))
+            return redirect(reverse('jobs:all_post'))
     else:
         form=PostForm()
     return render(request,'add_job.html',{'form':form})

@@ -27,9 +27,7 @@ class Post(models.Model):
     image= models.ImageField(upload_to=image_upload)
     slug= models.SlugField(blank=True,null=True)
     #creat slug in saver
-    def save(self,*args,**kwargs):
-        self.slug=slugify(self.title)
-        super(Post,self).save(*args,** kwargs)
+
     def __str__(self):
         return self.title
     #create Category
