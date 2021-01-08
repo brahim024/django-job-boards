@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'login',
     'ckeditor',
     'bootstrap4',
+    'social_django',
     'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,10 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'allauth',   
-    'allauth.account',   
-    'allauth.socialaccount', 
-    'allauth.socialaccount.providers.google', 
+    
 ]
 
 MIDDLEWARE = [
@@ -148,7 +146,3 @@ CKEDITOR_CONFIGS = {
         'width': 610,
     },
 }
-AUTHENTICATION_BACKENDS = (
- 'django.contrib.auth.backends.ModelBackend',
- 'allauth.account.auth_backends.AuthenticationBackend',
- )
