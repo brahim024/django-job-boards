@@ -47,4 +47,9 @@ class Apply(models.Model):
     def __str__(self):
         return self.your_name
        
-
+class Subscriber(models.Model):
+    email =models.CharField(max_length=200,blank=False,unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return str(slef.email)
