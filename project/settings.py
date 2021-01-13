@@ -25,7 +25,7 @@ SECRET_KEY = '21F23Ff976995C3F943661684Ac7B42687834C4C47Abe43A'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dj-job-boards.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -34,9 +34,12 @@ INSTALLED_APPS = [
     'jobs',
     'login',
     'ckeditor',
+    'sslserver',
     'bootstrap4',
+    'notifications',
     'social_django',
     'django_filters',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,3 +149,4 @@ CKEDITOR_CONFIGS = {
         'width': 610,
     },
 }
+AUTHENTICATION_BACKENDS='social_core.backends.facebook.FacebookOAuth2'
